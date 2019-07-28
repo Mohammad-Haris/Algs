@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Diagnostics;
+using Algs.Performance;
 
 namespace Algs
 {
@@ -6,7 +8,7 @@ namespace Algs
     {
         static void Main (string[] args)
         {
-            Console.WriteLine("Hello World!");
+            
         }
     }
 }

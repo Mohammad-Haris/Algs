@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Algs", "Algs\Algs.csproj", "{47520999-DB84-4ABA-A5BC-CC30E248313D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Algs", "Algs\Algs.csproj", "{47520999-DB84-4ABA-A5BC-CC30E248313D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlgsTest", "AlgsTest\AlgsTest.csproj", "{E0BC5158-1B04-4FDA-8AE7-80B697888425}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AlgsTest", "AlgsTest\AlgsTest.csproj", "{E0BC5158-1B04-4FDA-8AE7-80B697888425}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
