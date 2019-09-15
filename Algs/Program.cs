@@ -12,7 +12,7 @@ namespace Algs
         {
 			var FibMod = new FibMod(2816213588, 239);
 
-            var answer = FibMod.Calculate();
+            var answer = FibMod.CalculateSumFibmTonMod10(10, 10);
 
             Console.WriteLine(answer);
         }

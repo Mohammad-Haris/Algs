@@ -5,11 +5,11 @@ namespace Algs.Fibonacci
 {
     public class FibMod
     {
-        public Int64 n
+        private Int64 n
         {
             get; set;
         }
-        public Int64 m
+        private Int64 m
         {
             get; set;
         }
@@ -26,7 +26,7 @@ namespace Algs.Fibonacci
             m = 89;
         }
 
-        public Int64 Calculate ()
+        public Int64 CalculateFibModuloM ()
         {
             var binary = StringToArray(Convert.ToString(n, 2));
             var length = binary.Count;
@@ -64,6 +64,99 @@ namespace Algs.Fibonacci
             return Fibk % m;
         }
 
+        public int CalculateSumFibkMod10 (int k)
+        {
+            int MaxIterations = (k + 1) % 60;
+
+            int result = GetPisanoTenSumModTen(MaxIterations);
+
+            return result;
+        }
+
+        public int CalculateSumFibmTonMod10 (int m, int n)
+        {
+            int FibM = GetFibkModTen(m);            
+            int sum = FibM;
+
+            if (n - m >= 60)
+            {
+                sum += GetPisanoTenSumModTen(59, (m + 1) % 60);
+                sum += GetPisanoTenSumModTen((n + 1) % 60);
+            }
+
+            else
+            {
+                sum += GetPisanoTenSumModTen(n % 60, (m + 1) % 60);
+            }
+
+            return sum % 10;
+        }
+
+        #region Helpers
+
+        private int GetPisanoTenSumModTen (int MaxIterations)
+        {
+            int[] Fibs = new int[MaxIterations];
+
+            Fibs[0] = 0;
+            Fibs[1] = 1;
+
+            for (int i = 2; i < MaxIterations; i++)
+            {
+                Fibs[i] = (Fibs[i - 1] + Fibs[i - 2]) % 10;
+            }
+
+            int sum = 0;
+
+            for (int i = 0; i < MaxIterations; i++)
+            {
+                sum += Fibs[i];
+            }
+
+            return sum % 10;
+        }
+
+        private int GetPisanoTenSumModTen (int MaxIterations, int start)
+        {
+            int[] Fibs = new int[MaxIterations + 1];
+
+            Fibs[0] = 0;
+            Fibs[1] = 1;
+
+            for (int i = 2; i <= MaxIterations; i++)
+            {
+                Fibs[i] = (Fibs[i - 1] + Fibs[i - 2]) % 10;
+            }
+
+            int sum = 0;
+
+            for (int i = start; i <= MaxIterations; i++)
+            {
+                sum += Fibs[i];
+            }
+
+            return sum % 10;
+        }
+
+        private int GetFibkModTen (int k)
+        {
+            int Iterations = k % 60;
+
+            int[] Fibs = new int[Iterations + 1];
+
+            Fibs[0] = 0;
+            Fibs[1] = 1;
+
+            int i;
+
+            for (i = 2; i <= Iterations; i++)
+            {
+                Fibs[i] = Fibs[i - 1] + Fibs[i - 2];
+            }
+
+            return Fibs[i - 1] % 10;
+        }
+
         private Int64 CalculateTwice (Int64 Fib2kPlusOne, Int64 Fib2kMinusOne, Int64 mod)
         {
             return Fib2kPlusOne < Fib2kMinusOne ? mod - Math.Abs(Fib2kPlusOne - Fib2kMinusOne) : Fib2kPlusOne - Fib2kMinusOne;
@@ -99,7 +192,7 @@ namespace Algs.Fibonacci
             return binary;
         }
 
-        public int NumberOfDigits (Int64 number)
+        private int NumberOfDigits (Int64 number)
         {
             int count = 0;
 
@@ -113,5 +206,6 @@ namespace Algs.Fibonacci
 
             return count;
         }
+        #endregion
     }
 }
