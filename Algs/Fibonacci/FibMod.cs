@@ -5,28 +5,7 @@ namespace Algs.Fibonacci
 {
     public class FibMod
     {
-        private Int64 n
-        {
-            get; set;
-        }
-        private Int64 m
-        {
-            get; set;
-        }
-
-        public FibMod (Int64 FibBase, Int64 modulo)
-        {
-            n = FibBase;
-            m = modulo;
-        }
-
-        public FibMod ()
-        {
-            n = 13;
-            m = 89;
-        }
-
-        public Int64 CalculateFibModuloM ()
+        public Int64 CalculateFibModuloM (Int64 n, Int64 m)
         {
             var binary = StringToArray(Convert.ToString(n, 2));
             var length = binary.Count;

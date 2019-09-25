@@ -10,11 +10,6 @@ namespace Algs
     {
         static void Main (string[] args)
         {
-			var FibMod = new FibMod(2816213588, 239);
-
-            var answer = FibMod.CalculateSumFibmTonMod10(10, 10);
-
-            Console.WriteLine(answer);
         }
     }
 }

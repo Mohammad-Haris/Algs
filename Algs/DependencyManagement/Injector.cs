@@ -3,6 +3,9 @@ using System.Collections.Generic;
 
 namespace Algs.DependencyManagement
 {
+    /// <summary>
+    /// Implementation guidance taken from: https://rlbisbe.net/2014/08/04/creating-a-dependency-injection-engine-with-c/
+    /// </summary>
     public static class Injector
     {
         private static Dictionary<Type, Type> DependencyMap = new Dictionary<Type, Type>();

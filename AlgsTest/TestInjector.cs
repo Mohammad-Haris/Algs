@@ -4,7 +4,7 @@ using AlgsTest.HelperClasses;
 using NUnit.Framework;
 using AlgsTest.HelperInterfaces;
 
-namespace Tests
+namespace AlgsTest
 {
     [TestFixture]
     public class TestInjector
