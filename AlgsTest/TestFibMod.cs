@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Algs.Fibonacci;
+﻿using Algs.Fibonacci;
 using NUnit.Framework;
 
 namespace AlgsTest
