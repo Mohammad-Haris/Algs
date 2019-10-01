@@ -6,6 +6,8 @@ using Algs.Fibonacci;
 using Algs.FractionalKnapsack;
 using System.Collections.Generic;
 using Algs.CollectingSignatures;
+using Algs.MaxNoOfPrizes;
+using Algs.MaxSalary;
 
 namespace Algs
 {
